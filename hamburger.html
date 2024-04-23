@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hambuger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .hambuger .bar{
+          width: 30px;
+          height:4px;
+          background-color: black;
+          margin: 3px auto;
+        transition: all 0.3s ease-in-out;
+        
+        }
+
+        @media only screen and (max-width:768px) {
+       
+            .hambuger{
+                display: block;
+            }  
+
+
+
+            .hambuger.active .bar:nth-child(2){
+              opacity: 0;
+            }
+            .hambuger.active .bar:nth-child(1){
+              transform: translateY(8px) rotate(45deg);
+            }
+            .hambuger.active .bar:nth-child(3){
+              transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu{
+              position: fixed;
+              left: -100%;
+              top:70px;
+              gap: 0;
+              flex-direction: column;
+              background-color: black;
+              width: 100%;
+              text-align: center;
+              transition: 0.3s ease-in-out;
+            }
+            .nav-list-in a{
+              color: white !important;
+            }
+            .nav-list-in{
+              margin: 16px 0;
+            }
+            .nav-menu.active{
+              left: 0%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+  <!-- //https://www.youtube.com/watch?v=flItyHiDm7E -->
+
+    <header>
+        <div class="header">
+          <div class="logo home-header-logo">
+            <h1 class="logo-heading"><i class="fa fa-brands fa-pinterest"></i>Pinterest</h1>
+          </div>
+          <div class="navbar">
+            <div class="nav-list">
+              <ul class="nav-menu">
+                <li class="nav-list-in"><a target="_blank" href="About.html">About</a></li>
+                <li class="nav-list-in"><a target="_blank" href="Business.html">Business</a></li>
+                <li class="nav-list-in"><a target="_blank" href="#">Blog</a></li>
+                <li class="nav-list-in"><a target="_blank" href="#">Service</a></li>
+                <li class="nav-list-in"><a target="_blank" href="#">Contact</a></li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="hambuger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+    
+            <!-- <div id="mobile-nav" class="mobile-navbar">
+                <div class="mobile-nav-list">
+                  <ul>
+                    <li><a target="_blank" href="About.html">About</a></li>
+                    <li><a target="_blank" href="Business.html">Business</a></li>
+                    <li><a target="_blank" href="#">Blog</a></li>
+                    <li><a target="_blank" href="#">Service</a></li>
+                     <li><a target="_blank" href="#">Contact</a></li>
+                  </ul>
+    
+                </div>
+              </div> -->
+
+          </div>
+
+        </div>
+      </header>
+      
+</body>
+<script>
+  const hambuger =document.querySelector(".hambuger");
+  const navmenu = document.querySelector(".nav-menu")
+
+ hambuger.addEventListener('click' ,() => {
+   hambuger.classList.toggle("active")
+   navmenu.classList.toggle("active")
+ })
+
+</script>
+</html>

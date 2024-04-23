@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            /* background-color: black;
+            color: white; */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 90%;
+            margin: auto;
+            padding: 20px 0;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            width: 70%;
+            align-items: center;
+        }
+
+        .dropdown .line {
+            width: 30px;
+            height: 5px;
+            margin: 3px auto;
+            background-color: black;
+        }
+
+        .dropdown {
+            display: none;
+        }
+
+        @media only screen and (max-width:768px) {
+            .dropdown {
+                display: block;
+            }
+
+            .navbar {
+                position: fixed;
+                flex-direction: column;
+                top: 70px;
+                right: 0px;
+                padding: 10px;
+                width: 14%;
+                background-color: black;
+                color: white;
+                left: -100%;
+            }
+
+            .navbar:avtive {
+                left: 0%,
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Logo</h1>
+            <nav class="navbar">
+                <li>Home</li>
+                <li>About</li>
+                <li>Blog</li>
+                <li>Contact-us</li>
+            </nav>
+            <div class="dropdown">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </header>
+    </div>
+
+</body>
+<script>
+    
+    const dropdown =document.querySelector(".dropdown");
+  const navbar = document.querySelector(".navbar")
+
+ hambuger.addEventListener('click' ,() => {
+    dropdown.classList.toggle("active")
+    navbar.classList.toggle("active")
+ })
+
+</script>
+
+</html>
